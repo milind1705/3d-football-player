@@ -10,8 +10,8 @@ const Box = props =>{
   
     return(
         <Dragable>
-      <mesh api={api} ref={ref} {...props} castShadow receiveShadow >
-          <sphereBufferGeometry args={[0.2, 20,20]}/>
+      <mesh api={api} ref={ref} {...props} castShadow receiveShadow visible={false}>
+          <boxBufferGeometry args={[0.1,0.1,0.1]}/>
           <meshPhysicalMaterial map={texture}
           side={THREE.DoubleSide}
            />

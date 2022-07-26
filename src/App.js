@@ -11,6 +11,7 @@ import Ball from './component/Ball';
 import Footballplayerblue from './component/Footballplayerblue';
 import Football from './component/Football'
 import Dragable from './component/Dragable';
+import Box from './component/Box';
 
 
 const PlayingBall = ()=>{
@@ -23,13 +24,13 @@ const PlayingBall = ()=>{
       </Ball>
       </Suspense>
     </Dragable>
-     <Dragable transformGroup>
+     {/* <Dragable transformGroup>
      <Suspense>
      <Ball position={[4, 1,0.8]} dims={[0.8,0.8,0.7]} offset={[0,-0.3,0]} >
        <Football position={[0, 0.3,0]}/>
      </Ball>
      </Suspense>
-   </Dragable>
+   </Dragable> */}
    </>
   )
 }
@@ -51,6 +52,8 @@ function App() {
         <Suspense>
           <PlayingBall />
         </Suspense>
+      
+        <Box position={[3,0,3]}/>
         <Ground />
           </Physics>
       </Canvas>

@@ -41,7 +41,7 @@ export default function Model({ ...props }) {
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
-        <group name="Armature" rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
+        <group name="Armature" rotation={[Math.PI / 2, 0, 0]} scale={0.01} castShadow>
           <primitive object={nodes.mixamorigHips} />
           <skinnedMesh name="Ch42__Eyelashes" geometry={nodes.Ch42__Eyelashes.geometry} material={materials.Ch42_Hair} skeleton={nodes.Ch42__Eyelashes.skeleton} />
           <skinnedMesh name="Ch42_Body1" geometry={nodes.Ch42_Body1.geometry} material={materials.Ch42_Body} skeleton={nodes.Ch42_Body1.skeleton} />

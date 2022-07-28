@@ -43,12 +43,12 @@ export default function Model({ ...props }) {
       <group name="Scene">
         <group name="Armature" rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
           <primitive object={nodes.mixamorigHips} />
-          <skinnedMesh name="Ch42__Eyelashes" geometry={nodes.Ch42__Eyelashes.geometry} material={materials.Ch42_Hair} skeleton={nodes.Ch42__Eyelashes.skeleton} />
-          <skinnedMesh name="Ch42_Body1" geometry={nodes.Ch42_Body1.geometry} material={materials.Ch42_Body} skeleton={nodes.Ch42_Body1.skeleton} />
-          <skinnedMesh name="Ch42_Hair1" geometry={nodes.Ch42_Hair1.geometry} material={materials.Ch42_Hair} skeleton={nodes.Ch42_Hair1.skeleton} />
-          <skinnedMesh name="Ch42_Shirt" geometry={nodes.Ch42_Shirt.geometry} material={materials.Ch42_Body} skeleton={nodes.Ch42_Shirt.skeleton} />
-          <skinnedMesh name="Ch42_Shorts" geometry={nodes.Ch42_Shorts.geometry} material={materials.Ch42_Body} skeleton={nodes.Ch42_Shorts.skeleton} />
-          <skinnedMesh ref={snikker} name="Ch42_Sneakers" geometry={nodes.Ch42_Sneakers.geometry} material={materials.Ch42_Sneakers} skeleton={nodes.Ch42_Sneakers.skeleton} />
+          <skinnedMesh castShadow receiveShadow name="Ch42__Eyelashes" geometry={nodes.Ch42__Eyelashes.geometry} material={materials.Ch42_Hair} skeleton={nodes.Ch42__Eyelashes.skeleton} />
+          <skinnedMesh castShadow receiveShadow name="Ch42_Body1" geometry={nodes.Ch42_Body1.geometry} material={materials.Ch42_Body} skeleton={nodes.Ch42_Body1.skeleton} />
+          <skinnedMesh castShadow receiveShadow name="Ch42_Hair1" geometry={nodes.Ch42_Hair1.geometry} material={materials.Ch42_Hair} skeleton={nodes.Ch42_Hair1.skeleton} />
+          <skinnedMesh castShadow receiveShadow name="Ch42_Shirt" geometry={nodes.Ch42_Shirt.geometry} material={materials.Ch42_Body} skeleton={nodes.Ch42_Shirt.skeleton} />
+          <skinnedMesh castShadow receiveShadow name="Ch42_Shorts" geometry={nodes.Ch42_Shorts.geometry} material={materials.Ch42_Body} skeleton={nodes.Ch42_Shorts.skeleton} />
+          <skinnedMesh castShadow receiveShadow ref={snikker} name="Ch42_Sneakers" geometry={nodes.Ch42_Sneakers.geometry} material={materials.Ch42_Sneakers} skeleton={nodes.Ch42_Sneakers.skeleton} />
         </group>
       </group>
     </group>

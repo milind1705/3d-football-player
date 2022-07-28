@@ -12,6 +12,14 @@ import Footballplayerblue from './component/Footballplayerblue';
 import Football from './component/Football'
 import Dragable from './component/Dragable';
 
+function Plane({ ...props }) {
+  return (
+    <mesh {...props} receiveShadow>
+      <planeBufferGeometry args={[500, 500, 1, 1]} />
+      <shadowMaterial transparent opacity={0.2} />
+    </mesh>
+  )
+}
 
 const PlayingBall = ()=>{
   return(
@@ -34,19 +42,35 @@ const PlayingBall = ()=>{
   )
 }
 function App() {
- 
+  // const d = 2.25
+  // const mouse = useRef({ x: 0, y: 0 })
   return (
     <div style={{height:'100vh', width: '100vw', }}>
-      <Canvas style={{background:'black'}} camera={{position:[7,7,7]}}>
+      <Canvas shadows  style={{background:'white'}} camera={{position:[7,7,7]}}>
+      <directionalLight
+        position={[5, 8, 9.8]}
+        intensity={1}
+        castShadow
+        shadow-camera-left={-10}
+        shadow-camera-right={10}
+        shadow-camera-top={10}
+        shadow-camera-bottom={-10}
+      
+      />
+      
+      <Plane rotation={[-0.5 * Math.PI, 0, 0]} position={[0, -10, 0]} />
         <Orbit />
-        <Sun position={[0, 6, 6]}/>
+        
+        <Sun position={[0, 6, 2]}/>
+         {/*
         {/* <Sun position={[0, 6, -5]}/> */}
-      <ambientLight intensity={0.5}/>
-      {/* <pointLight /> */}
+      <ambientLight intensity={0.5}/> 
+      <pointLight />
       <Physics>
         <Suspense fallback={null}>
         {/* <Footballplayerblue /> */}
-          <Player />
+        {/* <Player /> */}
+        <Player />
         </Suspense>
         <Suspense>
           <PlayingBall />

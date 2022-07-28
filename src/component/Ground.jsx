@@ -6,7 +6,7 @@ const Ground = props=>{
   return(
     <mesh ref={ref} {...props} receiveShadow>
       <boxBufferGeometry args={[10,0,10]}/>
-      <meshPhysicalMaterial color={'green'}/>
+      <meshPhysicalMaterial color={'green'} />
     </mesh>
   )
 }

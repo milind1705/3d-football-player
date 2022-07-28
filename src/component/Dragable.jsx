@@ -13,6 +13,7 @@ const Dragable = props =>{
         setChildren(groupRef.current.children)
     },[])
     useEffect(()=>{
+      console.log(scene.orbitControls.enabled )
         controlRef.current.addEventListener('hoveron', e =>{
           scene.orbitControls.enabled = false
         })

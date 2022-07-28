@@ -10,6 +10,7 @@ import Sun from './component/Sun'
 import Ball from './component/Ball';
 import Footballplayerblue from './component/Footballplayerblue';
 import Football from './component/Football'
+import Ftball from './component/Ftball'
 import Dragable from './component/Dragable';
 import Box from './component/Box';
 
@@ -19,8 +20,8 @@ const PlayingBall = ()=>{
     <>
     <Dragable transformGroup>
       <Suspense>
-      <Ball position={[0, 1,0.8]} dims={[0.8,0.8,0.7]} offset={[0,-0.3,0]}  >
-        <Football position={[0, 0.3,0]}/>
+      <Ball position={[0, 0.4,0]} dims={[0.8,0.76,0.63]} offset={[0,-0.3,0]}  >
+        <Ftball position={[-0.09, 0.28,-0.05]}/>
       </Ball>
       </Suspense>
     </Dragable>
@@ -38,7 +39,8 @@ function App() {
  
   return (
     <div style={{height:'100vh', width: '100vw', }}>
-      <Canvas style={{background:'black'}} camera={{position:[7,7,7]}}>
+      <Canvas style={{background:'black'}} camera={{position:[7,7,7]}} shadowMap>
+       
         <Orbit />
         <Sun position={[0, 6, 6]}/>
         {/* <Sun position={[0, 6, -5]}/> */}

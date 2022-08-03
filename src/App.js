@@ -6,6 +6,7 @@ import './App.css';
 import Orbit from './component/Orbit';
 import Ground from './component/Ground';
 import Player from './component/Player'
+import SoccorPlayer from './component/SoccerPlayer'
 import Sun from './component/Sun'
 import Ball from './component/Ball';
 import Footballplayerblue from './component/Footballplayerblue';
@@ -20,26 +21,20 @@ const PlayingBall = ()=>{
     <>
     <Dragable transformGroup>
       <Suspense>
-      <Ball position={[0, 0.4,0]} dims={[0.8,0.76,0.63]} offset={[0,-0.3,0]}  >
-        <Ftball position={[-0.09, 0.28,-0.05]}/>
+      <Ball position={[0, 1,0]} dims={[1,1,1]} offset={[0,0,0]} visible>
+        {/* <Ftball position={[0,0,0]}/> */}
       </Ball>
       </Suspense>
     </Dragable>
-     {/* <Dragable transformGroup>
-     <Suspense>
-     <Ball position={[4, 1,0.8]} dims={[0.8,0.8,0.7]} offset={[0,-0.3,0]} >
-       <Football position={[0, 0.3,0]}/>
-     </Ball>
-     </Suspense>
-   </Dragable> */}
+   
    </>
   )
 }
 function App() {
  
   return (
-    <div style={{height:'100vh', width: '100vw', }}>
-      <Canvas style={{background:'black'}} camera={{position:[7,7,7]}} shadowMap>
+    <div style={{height:'100vh', width: '100vw',background:'black' }}>
+      <Canvas   camera={{position:[7,7,7]}} shadowMap>
        
         <Orbit />
         <Sun position={[0, 6, 6]}/>
@@ -49,13 +44,14 @@ function App() {
       <Physics>
         <Suspense fallback={null}>
         {/* <Footballplayerblue /> */}
-          <Player />
+          <SoccorPlayer />
         </Suspense>
         <Suspense>
           <PlayingBall />
+        {/* <Ball position={[0,0,0]} dims={[2,2,2]} offset={[0,0,0]}  /> */}
         </Suspense>
       
-        <Box position={[3,0,3]}/>
+        <Box position={[3,0,0]}/>
         <Ground />
           </Physics>
       </Canvas>

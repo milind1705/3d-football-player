@@ -1,16 +1,17 @@
-import { useBox } from "@react-three/cannon"
+import { useBox } from "@react-three/cannon";
+
 const BoundingBox = ({
-    position =[0,0,0],
-    offset = [0,0,0,],
+    position =[1,1,1],
+    offset = [0,0,1,],
     dims = [1,1,1],
     visible =false,
     children 
         })=>{
-    const [ref, api] = useBox(()=>({mass: 1, args:dims, position:position }))
+            const [ref, api] = useBox(()=>({mass: 1, args:dims, position:position }))
     return(
-        <group ref={ref} api={api} castShadow>
+        <group ref={ref} api={api}>
         <mesh scale={dims} visible={visible}>
-        <boxBufferGeometry args={[1,1,1]}/>
+            <boxBufferGeometry />
             <meshPhysicalMaterial wireframe/>
         </mesh>
             <group position={offset}>
@@ -18,9 +19,7 @@ const BoundingBox = ({
                 {children}
             </group>
         </group>
-  
-  
-       
     )
-  }
-  export default BoundingBox
+}
+
+export default BoundingBox;
